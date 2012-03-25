@@ -1,17 +1,12 @@
-a     = [1, 2]
-s     = a[-1] + a[-2]
-flag  = 0
-totag = 0
+a         = [1, 2]
+new_value = 3
+total     = 2
 
-while s < 4_000_000
-  a << s = a[-1] + a[-2]
+while new_value <= 4_000_000
+  new_value = a.first + a.last
+  a = [a.last, new_value]
 
-  if flag.zero?
-    flag  = 1
-  else
-    total += s
-    flag  = 0
-  end
+  total += new_value if new_value.even?
 end
 
 puts total
